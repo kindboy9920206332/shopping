@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Biski";
+  src: url("/Fonts/biski/BiskiTrial-Regular.otf") format(opentype);
+}
+@font-face {
+  font-family: "Dana";
+  src: url("/Fonts/dana/dana regular.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Niaz";
+  src: url("/Fonts/niaz/niaz.ttf") format(truetype);
+}
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  font-family: "Dana";
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: rgb(33, 123, 169) !important;
+  background-color: whitesmoke !important;
+  border-radius: 50%;
+  padding: 10px;
+}
+.swiper-button-prev {
+  background-image: url("/icon_svgs/arrow-left.svg") !important;
+  background-repeat: none !important;
+  background-size: cover !important;
+}
+.swiper-button-next {
+  background-image: url("/icon_svgs/arrow-right.svg") !important;
+  background-repeat: none !important;
+  background-size: cover !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgb(59, 59, 59) !important;
+  opacity: 0.8 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff !important;
+  opacity: 1 !important;
+  width: 20px !important;
+  height: 5px !important;
+  border-radius: 2px !important;
+}
