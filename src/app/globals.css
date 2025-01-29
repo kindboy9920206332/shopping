@@ -61,3 +61,25 @@
   height: 5px !important;
   border-radius: 2px !important;
 }
+.swiper-scrollbar-horizontal {
+  left: 0px !important;
+  bottom: 0px !important;
+}
+/* ::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0064a2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #008cff;
+} */

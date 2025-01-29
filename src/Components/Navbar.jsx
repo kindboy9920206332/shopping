@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <>
       <Container>
-        <nav className="shadow flex py-4 sticky ">
+        <nav className="shadow flex py-4 sticky top-0 z-[10]  ">
           {/*  logo */}
           <Link
             href={"/"}

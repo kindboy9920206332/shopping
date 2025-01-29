@@ -1,4 +1,8 @@
+import Opsshens from "@/Components/opshens";
+import Seugges_small from "@/Components/segess_small";
 import Slider from "@/Components/slider_big";
+import Sugess_big from "@/Components/sugess_big";
+import Link from "next/link";
 
 export default function Home_Store() {
   const slider_store_img = [
@@ -8,7 +12,6 @@ export default function Home_Store() {
     "/img-slider/refrigerator.jpg",
     "/img-slider/vacuumn clearn.jpg",
   ];
-
   return (
     <>
       {/* slider */}
@@ -26,15 +29,9 @@ export default function Home_Store() {
         </span>
         <span className="text-[40px] text-gray-800 font-bold">کاملاً راحت</span>
       </div> */}
-
-      {/* sugsess */}
-      <div className="flex gap-2 w-[80%] h-[500px] mx-auto">
-        <div className="basis-1/2 bg-red-500">{/* <Link></Link> */}</div>
-        <div className="basis-1/2 flex flex-col  justify-start gap-2">
-          <div className="basis-1/2 bg-blue-500">{/* <Link></Link> */}</div>
-          <div className="basis-1/2 bg-blue-500">{/* <Link></Link> */}</div>
-        </div>
-      </div>
+      <Sugess_big></Sugess_big>
+      <Seugges_small></Seugges_small>
+      <Opsshens></Opsshens>
     </>
   );
 }
