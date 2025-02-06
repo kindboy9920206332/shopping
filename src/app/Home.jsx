@@ -1,3 +1,6 @@
+import Articles from "@/Components/articles";
+import Baner_Home from "@/Components/baner_home";
+import Bnner_footer_home from "@/Components/Banner_footer_home";
 import Opsshens from "@/Components/opshens";
 import Seugges_small from "@/Components/segess_small";
 import Slider from "@/Components/slider_big";
@@ -32,6 +35,9 @@ export default function Home_Store() {
       <Sugess_big></Sugess_big>
       <Seugges_small></Seugges_small>
       <Opsshens></Opsshens>
+      <Baner_Home></Baner_Home>
+      <Articles></Articles>
+      <Bnner_footer_home></Bnner_footer_home>
     </>
   );
 }

@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
-import Container from "./continer";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -24,48 +22,41 @@ export default function Navbar() {
     },
   ];
   const icons = [
-    { icon: "/icon_svgs/search.svg", title: "search" },
-    { icon: "/icon_svgs/user.svg", title: "user" },
-    { icon: "/icon_svgs/box_buy.svg", title: "box_buy" },
+    { icon: "/icon_svgs/search.svg", href: "/", title: "search" },
+    { icon: "/icon_svgs/user.svg", href: "Login", title: "user" },
+    { icon: "/icon_svgs/box_buy.svg", href: "/", title: "box_buy" },
   ];
   return (
     <>
-      <Container>
-        <nav className="shadow flex py-4 sticky top-0 z-[10]  ">
-          {/*  logo */}
-          <Link
-            href={"/"}
-            className="flex justify-center items-center basis-1/3"
-          >
-            <span className="font-bold font-[Biski]  text-[24px]">
-              Homeland
-            </span>
-          </Link>
-          {/* titles */}
-          <div className="flex justify-center items-center basis-1/3">
-            {navLinks.map((item) => (
-              <Link className="ml-4" key={item.title} href={item.href}>
-                <span
-                  className={`${
-                    pathname === item.href ? "text-blue-500" : ""
-                  } text-[16px] font-bold`}
-                >
-                  {item.text}
-                </span>
-              </Link>
-            ))}
-          </div>
+      <nav className="shadow flex py-4 z-[10]  ">
+        {/*  logo */}
+        <Link href={"/"} className="flex justify-center items-center basis-1/3">
+          <span className="font-bold font-[Biski]  text-[24px]">Homeland</span>
+        </Link>
+        {/* titles */}
+        <div className="flex justify-center items-center basis-1/3">
+          {navLinks.map((item) => (
+            <Link className="ml-4" key={item.title} href={item.href}>
+              <span
+                className={`${
+                  pathname === item.href ? "text-blue-500" : ""
+                } text-[16px] font-bold`}
+              >
+                {item.text}
+              </span>
+            </Link>
+          ))}
+        </div>
 
-          {/* icons */}
-          <div className="flex  justify-center items-center basis-1/3">
-            {icons.map((item) => (
-              <div className="ml-2" key={item.title}>
-                <img src={item.icon} className="cursor-pointer" />
-              </div>
-            ))}
-          </div>
-        </nav>
-      </Container>
+        {/* icons */}
+        <div className="flex  justify-center items-center basis-1/3">
+          {icons.map((item) => (
+            <Link href={item.href} className="ml-2" key={item.title}>
+              <img src={item.icon} className="cursor-pointer" />
+            </Link>
+          ))}
+        </div>
+      </nav>
     </>
   );
 }

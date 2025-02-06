@@ -16,7 +16,6 @@ export default function Love_heart({ children }) {
           set_heart(() =>
             heart === image_heart_off ? image_heart_on : image_heart_off
           );
-          console.log(children);
         }}
       />
     </>

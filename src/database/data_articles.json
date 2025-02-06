@@ -1,0 +1,76 @@
+{
+  "articls": [
+    {
+      "id": 1,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Home.jpg",
+      "description_title": "",
+      "title": " روش برای دکور کردن خانه‌ خود مانند یک حرفه‌ای ",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Home_2.jpg",
+      "description_title": "",
+      "title": "خانه مدرن تگزاسی زیبا و کاملاً مناسب کودکان است",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Home_3.jpg",
+      "description_title": "",
+      "title": "خانه مدرن تگزاسی زیبا و کاملاً مناسب کودکان است",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Home_4.jpg",
+      "description_title": "",
+      "title": "خانه مدرن تگزاسی زیبا و کاملاً مناسب کودکان است",
+      "description": ""
+    },
+    {
+      "id": 5,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Home._1jpg",
+      "description_title": "",
+      "title": "خانه مدرن تگزاسی زیبا و کاملاً مناسب کودکان است",
+      "description": ""
+    },
+    {
+      "id": 6,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Kitchen.jpg",
+      "description_title": "",
+      "title": "سازمان‌دهی داخل یک آشپزخانه زیبا",
+      "description": ""
+    },
+    {
+      "id": 7,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Room.jpg",
+      "description_title": "دکور کردن اتاق خواب برای کودکان شما",
+      "title": "",
+      "description": ""
+    },
+    {
+      "id": 8,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Room1.jpg",
+      "description_title": "دکور کردن اتاق خواب برای کودکان شما",
+      "title": "",
+      "description": ""
+    },
+    {
+      "id": 9,
+      "history": "1403/10/12",
+      "img_title": "/img_acticles/Home_1.jpg",
+      "description_title": "",
+      "title": "خانه مدرن تگزاسی زیبا و کاملاً مناسب کودکان است",
+      "description": ""
+    }
+  ]
+}

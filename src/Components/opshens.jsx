@@ -45,10 +45,6 @@ export default function Opsshens() {
         ))}{" "}
       </div>
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   );
 }

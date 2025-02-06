@@ -1,84 +1,31 @@
+"use client";
+import { useEffect, useState } from "react";
 import Love_heart from "./love_heart";
 import Slider_small from "./slider_small";
 import Star_Point_avg from "./StarePoint-avg";
-import Star_Point from "./StarPoint-user";
 
 export default function Seugges_small() {
   const new_titr = "New";
   const toman = "تومان";
+  const [data, setData] = useState([]);
 
-  const information_product_sugges = [
-    {
-      price_main: "200 ",
-      point: 3.11,
-      price_with_discount: "199 ",
-      title: "boxbuy",
-      text_tilte: "سبد خرید",
-      discount: "50%",
-      id: 1,
-      img: "/img_sugges_new/boxbuy.jpg",
-    },
-    {
-      price_main: "200 ",
-      point: 4.5,
-      price_with_discount: "199 ",
-      title: "bulb_big",
-      text_tilte: "لامپ",
-      discount: "50%",
-      id: 2,
-      img: "/img_sugges_new/bulb_big.jpg",
-    },
-    {
-      price_main: "200 ",
-      point: 2.5,
-      price_with_discount: "199 ",
-      title: "cooking",
-      text_tilte: "تست پز",
-      discount: "50%",
-      id: 3,
-      img: "/img_sugges_new/cooking.jpg",
-    },
-    {
-      price_main: "200 ",
-      point: 5.5,
-      price_with_discount: "199 ",
-      title: "sofa",
-      text_tilte: "مبل",
-      discount: "50%",
-      id: 4,
-      img: "/img_sugges_new/sofa.jpg",
-    },
-    {
-      price_main: "200 ",
-      point: 1.5,
-      price_with_discount: "199 ",
-      title: "bulb_small",
-      text_tilte: "چراغ مطالعه",
-      discount: "50%",
-      id: 5,
-      img: "/img_sugges_new/bulb_small.jpg",
-    },
-    {
-      price_main: "200 ",
-      point: 4.5,
-      price_with_discount: "199 ",
-      title: "boxbuy",
-      text_tilte: "سبد خرید",
-      discount: "50%",
-      id: 6,
-      img: "/img_sugges_new/boxbuy.jpg",
-    },
-    {
-      price_main: "200 ",
-      point: 1.5,
-      price_with_discount: "199 ",
-      title: "boxbuy",
-      text_tilte: "سبد خرید",
-      discount: "50%",
-      id: 7,
-      img: "/img_sugges_new/boxbuy.jpg",
-    },
-  ];
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch("http://localhost:5500/data_product");
+        if (!response.ok) {
+          throw new Error("مشکلی در دریافت داده‌ها پیش آمد");
+        }
+        const databd = await response.json();
+        console.log(databd);
+        setData(() => databd);
+      } catch (error) {
+        console.error("خطای fetch:", error);
+      }
+    };
+
+    getData();
+  }, []);
 
   return (
     <>
@@ -96,8 +43,8 @@ export default function Seugges_small() {
       <div className="w-[100%] mb-3 relative  ">
         {/* slider */}
         <Slider_small>
-          {information_product_sugges.map((item) => (
-            <div className="w-[230px]">
+          {data.map((item) => (
+            <div className="w-[230px] " key={item.title}>
               <div
                 key={item.title}
                 className="w-[100%] h-[260px] relative flex bg-[#F3F5F7] justify-center items-start flex-col shadow-[1px_1px_7px_0px_gray] rounded-lg"
@@ -120,7 +67,7 @@ export default function Seugges_small() {
                 <img src={item.img} className="w-[100%] h-[200px]" />
                 <div className="w-[100%] flex justify-center items-center">
                   {/* btn */}
-                  <button className="bg-black text-white w-[200px] h-[40px] rounded-[5px]">
+                  <button className="bg-black border-b-4 border text-white w-[200px] h-[40px] rounded-[5px]">
                     {" "}
                     افزودن به سبد خرید{" "}
                   </button>
