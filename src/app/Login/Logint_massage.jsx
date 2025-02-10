@@ -10,7 +10,7 @@ export default function Login_message({ seccsses_unseccsses }) {
   return (
     <>
       {seccsses_unseccsses !== null ? (
-        <div className="text-center w-[200px] h-[40px] border-[2px] flex justify-center items-center">
+        <div className="text-center w-[200px] h-[40px] border-[2px] flex justify-center items-center shadow-lg bg-[#dfdfdfa1]">
           <div>
             {whitch_message === 1 ? (
               <span className="text-green-500 font-bold text-[18px]">

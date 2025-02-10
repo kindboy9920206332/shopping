@@ -1,21 +1,27 @@
 "use client";
-import { createContext, useEffect, useReducer, useRef, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import Login_message from "./Logint_massage";
 import Sign_up from "./sign_up";
 import Link from "next/link";
 import Check_value_inputs from "./check_value_inputs";
 import { useRouter } from "next/navigation";
+import { context_all } from "@/Components/context";
 export const provide_login = createContext();
 export default function Sign_in() {
+  const { users, set_users } = useContext(context_all);
   const [see_passwoer_true, set_see_password_true] = useState(null); // To check if the user login is successful
   const [save_data, set_save_data] = useState({}); // Data entered by the user in the login form
-  const [data_user, set_data_user] = useState([]); // Data of all users
   const [create_accont, set_create_accont] = useState("sign_in"); // Data of all users
   const [click_save_signIn, set_click_save_signIn] = useState(false); // click off  or on
   const data_useref = useRef();
   const rout = useRouter();
-
-  // console.log(data_useref);
   //!------------------------------------------------------------------------------------------------------- User data entered in the sign form
   const give_data = {
     id: "",
@@ -63,14 +69,14 @@ export default function Sign_in() {
     async function Receive_usersdata() {
       const response = await fetch("http://localhost:5300/Users");
       const data = await response.json();
-      set_data_user(() => data);
+      set_users(() => data);
       data_useref.current = data.length + 1;
       console.log(data_useref);
       set_give_data_state({ type: "id", id: data_useref.current });
     }
     Receive_usersdata();
   }, []);
-  const errors = Check_value_inputs(give_data_state, data_user);
+  const errors = Check_value_inputs(give_data_state, users);
   //!--------------------------------------------------------------------------------------------------------------------------------------------- give user data
 
   function Give_usersdata() {
@@ -96,7 +102,7 @@ export default function Sign_in() {
   //!---------------------------------------------------------------------------------------------------------------------------------- Sending user information for message verification
   const find_user = () => {
     if (save_data.usename != "" && save_data.password != "") {
-      const true_false = data_user.some(
+      const true_false = users.some(
         (item) =>
           item.usename === save_data.usename &&
           item.password === save_data.password
@@ -104,8 +110,12 @@ export default function Sign_in() {
       set_see_password_true(true_false);
       setTimeout(() => {
         set_see_password_true(null);
-        rout.push("/accont_user");
-      }, 500);
+        if (true_false) {
+          rout.push(
+            `/accont_user?usename=${save_data.usename}&password=${save_data.password}`
+          );
+        }
+      }, 1000);
     }
   };
 
@@ -224,7 +234,7 @@ export default function Sign_in() {
                     set_give_data_state({ type: "reset" }); //!------------------------------------reset inputs
                     setTimeout(() => {
                       Give_usersdata();
-                      rout.push("/accont_user");
+                      rout.push(`/accont_user`);
                     }, 1000);
                   } else {
                     set_click_save_signIn(() => true);
@@ -238,7 +248,7 @@ export default function Sign_in() {
           )}
         </div>{" "}
         {/* //!-----------------------------------------------------------------------------sending massage for seccess or unseccess sign in */}
-        <div className="absolute top-2 right-5">
+        <div className="absolute top-2 right-7">
           <Login_message seccsses_unseccsses={see_passwoer_true} />
         </div>
       </provide_login.Provider>

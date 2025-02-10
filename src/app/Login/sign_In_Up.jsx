@@ -3,7 +3,7 @@ export default function SignIn_Up() {
   return (
     <>
       <div className="w-[100%] h-[100vh] flex justify-center items-center ">
-        <div className="w-[1200px] h-[700px] flex justify-center items-center rounded-[10px] shadow-[0px_0px_25px_0px_gray] ">
+        <div className="w-[1200px] h-[700px] flex justify-center items-center rounded-[10px] shadow-[0px_0px_25px_0px_gray] relative">
           <div className="w-[100%] h-[100%] basis-1/2 flex items-center justify-center  ">
             <div className="w-[100%] h-[100%] ">
               <span

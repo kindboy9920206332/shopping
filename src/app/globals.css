@@ -19,6 +19,10 @@
   margin: 0%;
   font-family: "Dana";
 }
+body {
+  height: 100%;
+  width: 100%;
+}
 .swiper-button-next,
 .swiper-button-prev {
   width: 40px !important;
@@ -30,6 +34,13 @@
   background-color: whitesmoke !important;
   border-radius: 50%;
   padding: 10px;
+}
+@media (max-width: 760px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 25px !important;
+    height: 25px !important;
+  }
 }
 .swiper-button-prev {
   background-image: url("/icon_svgs/arrow-left.svg") !important;
@@ -64,6 +75,9 @@
 .swiper-scrollbar-horizontal {
   left: 0px !important;
   bottom: 0px !important;
+}
+.hover_effect {
+  border: 2px;
 }
 /* ::-webkit-scrollbar {
   width: 5px;

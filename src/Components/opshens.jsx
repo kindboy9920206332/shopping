@@ -28,15 +28,17 @@ export default function Opsshens() {
   return (
     <>
       {" "}
-      <div className="w-[100%] h-[200px] flex gap-3 justify-center items-center">
+      <div className="w-[100%] h-[400px] md:h-[200px] flex flex-wrap md:flex-nowrap gap-3 justify-center items-center">
         {opshens.map((item) => (
           <div
             key={item.title}
-            className="text-right bg-[#F3F5F7] w-[23%] h-[100%] relative flex  justify-center px-3 flex-col"
+            className="text-right bg-[#F3F5F7] h-[190px] lg:w-[230px] shadow-2xl rounded-lg w-[160px]  relative flex  justify-center px-3 flex-col"
           >
             <div>
-              <span className="text-[20px] font-bold ">{item.text_title}</span>{" "}
-              <img src={item.icon} className="inline" />{" "}
+              <span className="text-[16px] lg:text-[18px] font-bold  ">
+                {item.text_title}
+              </span>{" "}
+              <img src={item.icon} className="inline w-[27px]" />{" "}
             </div>
             <div className="mt-[10px] text-[#6C7275] text-[14px]">
               <span>{item.describtion}</span>

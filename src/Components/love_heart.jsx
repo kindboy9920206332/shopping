@@ -10,6 +10,7 @@ export default function Love_heart({ children }) {
   return (
     <>
       <img
+        className=" w-auto md:w-[70px] lg:w-[60px]"
         src={heart}
         alt=""
         onClick={() => {
