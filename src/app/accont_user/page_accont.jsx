@@ -3,9 +3,9 @@ import { useContext } from "react";
 import Input_accont from "./accont";
 import Menu_accont from "./menu_accont";
 import { context_all } from "@/Components/context";
-import Cart from "./cart";
 import Wishes from "./wishes";
 import Adress from "./adress";
+import Orders from "./orders";
 
 export default function Accont() {
   const { pathname_menu, set_pathname_menu } = useContext(context_all);
@@ -16,12 +16,12 @@ export default function Accont() {
       title: "accont",
     },
     {
-      component: <Cart></Cart>,
-      title: "cart",
-    },
-    {
       component: <Wishes></Wishes>,
       title: "wishing",
+    },
+    {
+      component: <Orders></Orders>,
+      title: "orders",
     },
     {
       component: <Adress></Adress>,

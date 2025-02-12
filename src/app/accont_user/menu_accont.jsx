@@ -31,12 +31,12 @@ export default function Menu_accont() {
       text_title: "پروفایل من",
     },
     {
-      title: "cart",
-      text_title: "سفارشات من",
-    },
-    {
       title: "wishing",
       text_title: "علاقه مندی ها ",
+    },
+    {
+      title: "orders",
+      text_title: "رسید خرید ها",
     },
     {
       title: "addres",

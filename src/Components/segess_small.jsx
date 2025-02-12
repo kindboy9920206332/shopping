@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Love_heart from "./love_heart";
 import Slider_small from "./slider_small";
 import Star_Point_avg from "./StarePoint-avg";
+import Btn_Cart from "./btn_cart";
 
 export default function Seugges_small() {
   const new_titr = "New";
@@ -70,10 +71,7 @@ export default function Seugges_small() {
                 <img src={item.img} className="w-[100%] h-[200px]" />
                 <div className="w-[100%] flex justify-center items-center">
                   {/* btn */}
-                  <button className="bg-black  hover:bg-[#1a002e] shadow-lg relative bottom-1 md:bottom-0   2xl:w-[200px] xl:w-[180px] lg:text-[16px] lg:w-[150px] lg:h-[35px] md:text-[22px] md:h-[50px] md:w-[250px] w-[130px] rounded-[5px] h-[35px] text-[14px] text-white">
-                    {" "}
-                    افزودن به سبد خرید{" "}
-                  </button>
+                  <Btn_Cart>{item.id}</Btn_Cart>
                 </div>
               </div>
               {/* product information */}

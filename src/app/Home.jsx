@@ -30,6 +30,7 @@ export default function Home_Store() {
       <Baner_Home></Baner_Home>
       <Articles></Articles>
       <Bnner_footer_home></Bnner_footer_home>
+      
     </>
   );
 }
